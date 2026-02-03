@@ -7,8 +7,9 @@ let students = [
 let studentListDiv = document.querySelector(".tom")
 
 students.forEach(function (student) {
-    const studentdiv = document.createElement("div")
+    let studentdiv = document.createElement("div")
+    studentdiv.classList.add("student")
     studentdiv.textContent = student.name + ', alder' + student.age + ', Uddanelse' + student.course
-    studentListDiv.append(studentdiv)
+    studentListDiv.appendChild(studentdiv)
 })
 
