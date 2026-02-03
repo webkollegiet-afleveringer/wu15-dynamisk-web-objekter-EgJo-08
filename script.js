@@ -6,10 +6,17 @@ let students = [
 
 let studentListDiv = document.querySelector(".tom")
 
-students.forEach(function (student) {
-    let studentdiv = document.createElement("div")
-    studentdiv.classList.add("student")
-    studentdiv.textContent = student.name + ', alder' + student.age + ', Uddanelse' + student.course
-    studentListDiv.appendChild(studentdiv)
-})
+students.forEach(student => {
+    let studentDiv = document.createElement('div');
+    studentDiv.classList.add('student');
+
+    let studentHeadline = document.createElement('h2');
+    studentHeadline.textContent = student.name;
+
+    let studentInfo = document.createElement('p');
+    studentInfo.textContent = `Alder: ${student.age}, Uddannelse: ${student.course}`;
+
+    studentDiv.append(studentHeadline, studentInfo);
+    studentListDiv.appendChild(studentDiv);
+});
 
